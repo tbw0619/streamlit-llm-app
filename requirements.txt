@@ -3,6 +3,8 @@ annotated-types==0.7.0
 anyio==4.9.0
 attrs==25.3.0
 blinker==1.9.0
+langchain==0.3.24
+langchain-openai==0.3.8
 cachetools==5.5.2
 certifi==2025.7.9
 charset-normalizer==3.4.2

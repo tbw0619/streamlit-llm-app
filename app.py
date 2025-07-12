@@ -4,7 +4,6 @@ load_dotenv()
 
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
-from langchain.chains import LLMChain
 
 def get_expert_advice(input_text, expert_type):
     """
@@ -41,10 +40,10 @@ def get_expert_advice(input_text, expert_type):
     ])
     
     # チェーンの作成と実行
-    chain = LLMChain(prompt=prompt, llm=llm)
-    result = chain.run(input_text)
+    chain = prompt | llm
+    result = chain.invoke({"input": input_text})
     
-    return result
+    return result.content
 
 # Streamlitアプリのメイン部分
 def main():
